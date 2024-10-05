@@ -3,6 +3,7 @@ import "./globals.css";
 import Web3ModalProvider from "./wagmiProvider";
 import { headers } from "next/headers";
 import { Toaster } from "./components/ui/toaster";
+import Navbar from "./components/navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+		<Navbar />
         <Web3ModalProvider cookies={cookies}>{children}</Web3ModalProvider>
         <Toaster />
       </body>
